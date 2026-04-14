@@ -1,0 +1,34 @@
+<div class="container">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Gestión de tareas</p>
+      <h1>🗒️ Lista Tareas</h1>
+      <p class="subtitle">Organiza, completa y elimina tareas con una interfaz limpia y moderna.</p>
+    </div>
+  </header>
+
+  <app-task-input (tareaAgregada)="agregarTarea($event)"></app-task-input>
+
+  <ng-container *ngIf="tareas$ | async as tareas">
+    <section class="dashboard">
+      <div class="metric-card">
+        <span class="metric-value">{{ contarTareas(tareas) }}</span>
+        <span class="metric-label">Tareas totales</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value">{{ tareasCompletadas(tareas) }}</span>
+        <span class="metric-label">Completadas</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-value">{{ tareasPendientes(tareas) }}</span>
+        <span class="metric-label">Pendientes</span>
+      </div>
+    </section>
+
+    <app-task-list
+      [tareas]="tareas"
+      (eliminarTarea)="eliminarTarea($event)"
+      (toggleTarea)="toggleTarea($event)">
+    </app-task-list>
+  </ng-container>
+</div>

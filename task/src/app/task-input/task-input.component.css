@@ -1,0 +1,58 @@
+.input-card {
+  background: #f5f7fa;
+  border: 1px solid #e0e7ef;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.input-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.field-row input {
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: #0f172a;
+  background: white;
+}
+
+.field-row input:focus {
+  outline: none;
+  border-color: #4338ca;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12);
+}
+
+.field-row button {
+  border: none;
+  background: #4338ca;
+  color: white;
+  padding: 0 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.field-row button:disabled {
+  background: #c7d2fe;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 10px;
+  color: #b91c1c;
+  font-size: 14px;
+}

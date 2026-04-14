@@ -1,0 +1,18 @@
+<div *ngIf="tareas?.length; else sinTareas">
+  <ul>
+    <li *ngFor="let tarea of tareas; let i = index; trackBy: trackByIndex" [class.completada]="tarea.completada">
+      <button type="button" class="task-toggle" (click)="onToggle(i)" aria-label="Marcar tarea como completada">
+        <span class="checkbox" [class.checked]="tarea.completada"></span>
+      </button>
+      <span class="texto-tarea">{{ tarea.texto }}</span>
+      <button class="delete-button" type="button" (click)="onEliminar(i)">Eliminar</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #sinTareas>
+  <div class="empty-state">
+    <p class="empty-message">No hay tareas registradas</p>
+    <small>Añade una tarea utilizando el formulario de arriba.</small>
+  </div>
+</ng-template>

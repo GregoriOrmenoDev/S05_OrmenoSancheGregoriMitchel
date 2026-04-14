@@ -1,0 +1,15 @@
+<div class="input-card">
+  <label for="task-input">Nueva tarea</label>
+  <div class="field-row">
+    <input
+      id="task-input"
+      [(ngModel)]="nuevaTarea"
+      placeholder="Ej. Revisar documentación de Angular"
+      (input)="mensajeError = ''"
+      autocomplete="off"
+    />
+    <button type="button" (click)="agregar()" [disabled]="!nuevaTarea.trim()">Agregar</button>
+  </div>
+
+  <p class="error" *ngIf="mensajeError">{{ mensajeError }}</p>
+</div>
